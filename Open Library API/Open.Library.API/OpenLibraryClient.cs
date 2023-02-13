@@ -6,25 +6,34 @@ namespace Open.Library.API;
 public class OpenLibraryClient
 {
     private const string BaseUrl = "https://openlibrary.org/";
+    private const string CoversUrl = "https://covers.openlibrary.org/b/";
     private const string IsbnEndpoint = "isbn";
 
-    public OpenLibraryClient()
+    public async Task<IsbnCheckResponse?> GetBookDetailsByIsbn(string isbn)
     {
-    }
-
-    public async Task<IsbnCheckResponse?> GetByIsbn(string isbn)
-    {
-        var request = GetIsbnRequest(isbn);
+        var baseUrl = new Uri($"{BaseUrl}{IsbnEndpoint}/{isbn}.json");
+        var request = new RestRequest(baseUrl);
         var client = new RestClient();
-        
+
         var response = await client.ExecuteAsync<IsbnCheckResponse?>(request);
         return response.IsSuccessStatusCode ? response.Data : null;
     }
 
-    private static RestRequest GetIsbnRequest(string isbn)
+    public async Task<byte[]?> GetBookCoverByIsbn(string isbn, CoverSize coverSize)
     {
-        Uri baseUrl = new Uri($"{BaseUrl}{IsbnEndpoint}/{isbn}.json");
+        string size = coverSize switch
+        {
+            CoverSize.Small => "-S",
+            CoverSize.Medium => "-M",
+            CoverSize.Large => "-L",
+            _ => throw new ArgumentOutOfRangeException(nameof(coverSize), coverSize, null)
+        };
+
+        var baseUrl = new Uri($"{CoversUrl}isbn/{isbn}{size}.jpg");
         var request = new RestRequest(baseUrl);
-        return request;
+        var client = new RestClient();
+
+        var response = await client.DownloadDataAsync(request);
+        return response;
     }
 }
