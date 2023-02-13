@@ -3,7 +3,7 @@ using Xunit;
 
 namespace Open.Library.Api.Tests;
 
-public class BookClientIntegrationTests
+public class ClientIntegrationTests
 {
 
     [Fact]

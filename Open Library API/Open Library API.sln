@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Open.Library.API", "Open.Library.API\Open.Library.API.csproj", "{C751B45B-94DB-4096-97C2-16E82C0A4D89}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Open.Library.Api.Tests", "Open.Library.Api.Tests\Open.Library.Api.Tests.csproj", "{0D6B2981-B9C4-4C20-8D30-4673D65B8503}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{C751B45B-94DB-4096-97C2-16E82C0A4D89}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C751B45B-94DB-4096-97C2-16E82C0A4D89}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C751B45B-94DB-4096-97C2-16E82C0A4D89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D6B2981-B9C4-4C20-8D30-4673D65B8503}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D6B2981-B9C4-4C20-8D30-4673D65B8503}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D6B2981-B9C4-4C20-8D30-4673D65B8503}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D6B2981-B9C4-4C20-8D30-4673D65B8503}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
