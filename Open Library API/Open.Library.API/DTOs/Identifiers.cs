@@ -11,4 +11,5 @@ public class Identifiers
     public List<string> Lccn { get; set; }
     public List<string> Oclc { get; set; }
     public List<string> Openlibrary { get; set; }
+    public List<string> ProjectGutenberg { get; set; }
 }
