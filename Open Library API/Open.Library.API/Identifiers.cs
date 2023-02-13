@@ -1,4 +1,4 @@
-namespace Open_Library_API;
+namespace Open.Library.API;
 
 public class Identifiers
 {
