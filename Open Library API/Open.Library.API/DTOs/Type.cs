@@ -1,4 +1,4 @@
-namespace Open.Library.API;
+namespace Open.Library.API.DTOs;
 
 public class Type
 {

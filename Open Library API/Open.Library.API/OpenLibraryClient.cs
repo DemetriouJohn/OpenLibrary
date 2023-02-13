@@ -1,3 +1,4 @@
+using Open.Library.API.DTOs;
 using RestSharp;
 
 namespace Open.Library.API;
@@ -11,12 +12,12 @@ public class OpenLibraryClient
     {
     }
 
-    public async Task<IsbnCheckRoot?> GetByIsbn(string isbn)
+    public async Task<IsbnCheckResponse?> GetByIsbn(string isbn)
     {
         var request = GetIsbnRequest(isbn);
         var client = new RestClient();
         
-        var response = await client.ExecuteAsync<IsbnCheckRoot?>(request);
+        var response = await client.ExecuteAsync<IsbnCheckResponse?>(request);
         return response.IsSuccessStatusCode ? response.Data : null;
     }
 

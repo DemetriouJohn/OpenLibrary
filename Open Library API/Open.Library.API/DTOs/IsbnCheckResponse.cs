@@ -1,6 +1,6 @@
-namespace Open.Library.API;
+namespace Open.Library.API.DTOs;
 
-public class IsbnCheckRoot
+public class IsbnCheckResponse
 {
     public List<string> Publishers { get; set; }
     public int NumberOfPages { get; set; }
